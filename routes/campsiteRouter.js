@@ -113,7 +113,6 @@ campsiteRouter
         if (campsite) {
           req.body.author = req.user._id;
           campsite.comments.push(req.body);
-          campsite.comments.push(req.body);
           campsite
             .save()
             .then((campsite) => {

@@ -1,7 +1,7 @@
 const express = require('express');
 const Promotion = require('../models/promotion');
 const promotionRouter = express.Router();
-const authenticate = require('../autheticate')
+const authenticate = require('../authenticate')
 const cors = require('./cors');
 
 promotionRouter.route('/')
@@ -65,7 +65,7 @@ promotionRouter.route('/:promotionsId')
     })
     .catch(err => next(err))
 })
-.deletecors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res) => {
+.delete(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res) => {
     Promotion.findByIdAndDelete(req.params.promotionsId)
     .then(response => {
         res.statusCode = 200;
